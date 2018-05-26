@@ -573,7 +573,7 @@ int Common__FindCharPos(char* src,char dst)
 **
 **函数名：
 **
-**功能：获取位值
+**功能：获取32位数中某几位的值
 **
 **参数： 无
 **
@@ -598,13 +598,13 @@ unsigned long Common__GetBitValue(unsigned long U32data,int startpos,int endpos,
 **
 **函数名：
 **
-**功能：获取系统名称，以_为分隔符获取倒数第2个字符串
+**功能：获取系统名称，以_为分隔符获取倒数第2个字符串，例如aa_bb_cc，返回bb
 **
 **参数： 无
 **
 **返回值：无
 **
-**设计注记：
+**设计注记：占用空间有点多，可以设计改进
 **
 **.EH-----------------------------------------------------------------
 */
@@ -851,6 +851,7 @@ int Common_Str2Int(const char *str, int len)
 	return out;
 }
 #if 0
+/*方法二*/
 int Common_Str2Int(const char *str_int, int len)
 {
 	if(str == NULL)
@@ -901,7 +902,7 @@ float Common_Str2Double(const char *str)
 	return out;
 }
 
-
+/*字符串比较*/
 int Common_CharArrayCmp(char *s1, int l1, char *s2, int l2)
 {
     int lmin = l1>l2? l2:l1; //较小长度者。
@@ -1217,6 +1218,20 @@ void swap4byte(unsigned int *addr)
 }
 
 
+/*.BH-----------------------------------------------------------------
+**
+**函数名：
+**
+**功能：链表实现消息队列，支持任意类型数据
+**
+**参数： 
+**
+**返回值：
+**
+**设计注记：
+**
+**.EH-----------------------------------------------------------------
+*/
  //初始化队列
 int Queue_Init(LinkQueue* que)
 {
