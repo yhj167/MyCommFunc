@@ -9,6 +9,8 @@ Oriented Maintain System for real-time fault analysis and forecast
 
 3.职业规划如何：
 
-4.工作中遇到的问题，如何解决：可以说下排故的经历（文件系统导致复位，BM丢数， oms系统性能提升）。
+4.工作中遇到的问题，如何解决：可以说下排故的经历（文件系统导致复位，BM丢数， oms系统性能提升，通地问题收集）。
 
-5.算法和数据结构：comm_func，leetcode。
+5.算法和数据结构：comm_func，leetcode，通地项目代码整理。
+
+6.机器学习知识复习，训练测试流程熟悉。
