@@ -137,3 +137,51 @@ float Common_Str2Double(const char *str)
 	}
 	return out;
 }
+
+/*.BH-----------------------------------------------------------------
+**
+**函数名：
+**
+**功能：2字节的字节序转换
+**
+**参数： 无
+**
+**返回值：无
+**
+**设计注记：
+**
+**.EH-----------------------------------------------------------------
+*/
+void swap2byte(unsigned short *addr) 
+{
+ 	unsigned short tmp = *addr;
+	unsigned short tmp1, tmp2;
+	tmp1 = tmp & 0xff;
+	tmp2 = (tmp >> 8) & 0xff;
+	*addr = (tmp1 << 8) | (tmp2);
+}
+
+/*.BH-----------------------------------------------------------------
+**
+**函数名：
+**
+**功能：4字节的字节序转换
+**
+**参数： 无
+**
+**返回值：无
+**
+**设计注记：
+**
+**.EH-----------------------------------------------------------------
+*/
+void swap4byte(unsigned int *addr) 
+{
+	unsigned int tmp = *addr;
+	unsigned int tmp1, tmp2, tmp3, tmp4;
+	tmp1 = tmp & 0xff;
+	tmp2 = (tmp >> 8) & 0xff;
+	tmp3 = (tmp >> 16) & 0xff;
+	tmp4 = (tmp >> 24) & 0xff;
+	*addr = (tmp1 << 24) | (tmp2 << 16) | (tmp3 << 8) | (tmp4);
+}
