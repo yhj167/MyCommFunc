@@ -1,3 +1,31 @@
+/*hash table max size*/
+#define HASH_TABLE_MAX_SIZE 40
+
+/*hash table大小*/
+int hash_table_size=0;
+
+/*.BH-----------------------------------------------------------------
+**                 结构体定义
+**.EH-----------------------------------------------------------------
+*/
+/*hashTable结构*/
+typedef SysIndexs HashKeyType;
+typedef struct{     
+    OMS_TYPE__CurrFaultReport curr_fault_report;
+    unsigned int begin_time[SYS_FAULT_REPORT_MAX_NUM];
+    unsigned int end_time[SYS_FAULT_REPORT_MAX_NUM];
+    unsigned int report_valid[SYS_FAULT_REPORT_MAX_NUM];
+}HashValueType;
+typedef struct HashNode_Struct HashNode;
+
+struct HashNode_Struct
+{
+    HashKeyType sKey;
+    HashValueType nValue;
+    HashNode* pNext;
+};
+HashNode* hashTable[HASH_TABLE_MAX_SIZE]; //hash table data strcutrue
+
 /*=================hash table function======================*/
 /*.BH-----------------------------------------------------------------
 **
